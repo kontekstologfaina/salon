@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Салон красоты «Земфира» | Могилев</title>
+  <meta name="description" content="Салон красоты «Земфира» в Могилеве: парикмахерские услуги, маникюр, педикюр и расслабляющий массаж. Красота с душой.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-cream: #FAF7F2;
+      --bg-cream-alt: #F3EDE2;
+      --bg-card: #FFFFFF;
+      --text-main: #3D2C24;
+      --text-muted: #6F5E53;
+      --text-light: #8C5D3E;
+      --brown-primary: #6F4E37;
+      --brown-hover: #583D2A;
+      --brown-dark: #2B1E17;
+      --accent-warm: #D4A373;
+      --accent-soft: #E6CCB2;
+      --border-warm: #E8DFD5;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --shadow-soft: 0 10px 30px -5px rgba(107, 79, 63, 0.08);
+      --shadow-hover: 0 20px 40px -8px rgba(107, 79, 63, 0.16);
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; transition: var(--transition); }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; position: relative; }
+    h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--text-main); font-weight: 700; line-height: 1.15; }
+
+    .section-header { text-align: center; max-width: 680px; margin: 0 auto 56px; }
+    .section-eyebrow {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-light); margin-bottom: 8px;
+    }
+    .section-title { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 12px; }
+    .section-divider { width: 60px; height: 3px; background: var(--accent-warm); margin: 14px auto 0; border-radius: var(--radius-full); }
+    .section-desc { color: var(--text-muted); font-size: 1.05rem; margin-top: 14px; }
+
+    /* Липкое (sticky) меню */
+    .header {
+      position: sticky; top: 0; left: 0; width: 100%;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-warm);
+      z-index: 1000; padding: 16px 0;
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-badge {
+      width: 38px; height: 38px; border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--brown-primary), var(--accent-warm));
+      display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;
+    }
+    .logo-text-title { font-family: var(--font-serif); font-size: 1.65rem; font-weight: 700; line-height: 1; }
+    .logo-text-sub { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-light); display: block; margin-top: 2px; }
+    .nav-menu { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-link { font-size: 0.95rem; font-weight: 500; position: relative; padding: 4px 0; }
+    .nav-link:hover { color: var(--brown-primary); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 28px; border-radius: var(--radius-full); font-size: 0.85rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; transition: var(--transition); cursor: pointer;
+    }
+    .btn-primary { background: var(--brown-primary); color: #FFFFFF; }
+    .btn-primary:hover { background: var(--brown-hover); transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .btn-secondary { background: #FFFFFF; color: var(--text-main); border: 1px solid var(--accent-warm); }
+    .btn-secondary:hover { background: var(--bg-cream-alt); transform: translateY(-2px); }
+
+    /* Hero */
+    .hero-section {
+      min-height: 85vh; display: flex; align-items: center; padding: 60px 0 80px;
+      background: radial-gradient(circle at 75% 30%, rgba(221, 190, 169, 0.45) 0%, rgba(250, 247, 242, 0.9) 60%, var(--bg-cream) 100%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px;
+      border-radius: var(--radius-full); background: #EAE0D5; font-size: 0.8rem; font-weight: 600; color: var(--brown-primary); margin-bottom: 20px;
+    }
+    .hero-title { font-size: clamp(2.5rem, 5.5vw, 4.5rem); line-height: 1.05; margin-bottom: 20px; }
+    .hero-subtitle { font-size: clamp(1rem, 1.3vw, 1.2rem); color: var(--text-muted); line-height: 1.7; margin-bottom: 36px; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 40px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 28px; border-top: 1px solid var(--border-warm); }
+    .hero-stat-num { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--brown-primary); }
+    .hero-stat-label { font-size: 0.75rem; color: var(--text-muted); }
+    .hero-image-wrapper { border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 25px 50px -12px rgba(107, 79, 63, 0.25); border: 6px solid #FFF; }
+    .hero-image { width: 100%; height: 460px; object-fit: cover; }
+
+    /* О салоне */
+    .about-section { background-color: var(--bg-cream-alt); }
+    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
+    .about-photo-wrapper { border-radius: var(--radius-lg); overflow: hidden; border: 6px solid #FFF; position: relative; }
+    .about-photo { width: 100%; height: 420px; object-fit: cover; object-position: top; }
+    .about-photo-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
+      background: linear-gradient(to top, rgba(43, 30, 23, 0.85) 0%, transparent 100%); color: #FFF;
+    }
+    .about-quote {
+      margin-top: 20px; padding: 20px 24px; background: rgba(255, 255, 255, 0.75);
+      border-left: 3px solid var(--accent-warm); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-family: var(--font-serif); font-style: italic; font-size: 1.1rem;
+    }
+    .about-values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    .value-box { background: #FFF; padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-warm); display: flex; gap: 12px; }
+
+    /* Услуги (Сетка 4 карточек) */
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .service-card {
+      background: var(--bg-card); border-radius: var(--radius-md); overflow: hidden;
+      border: 1px solid var(--border-warm); box-shadow: var(--shadow-soft);
+      display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition);
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--accent-warm); }
+    .service-card-media { height: 190px; overflow: hidden; position: relative; }
+    .service-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .service-card:hover .service-card-img { transform: scale(1.08); }
+    .service-card-body { padding: 20px; flex-grow: 1; }
+    .service-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .service-card-title { font-size: 1.35rem; }
+    .service-card-price { font-size: 0.75rem; font-weight: 700; color: var(--text-light); background: var(--bg-cream-alt); padding: 3px 8px; border-radius: var(--radius-sm); }
+    .service-card-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; }
+    .service-item-list { list-style: none; padding-top: 10px; border-top: 1px dashed var(--border-warm); }
+    .service-item-row { display: flex; justify-content: space-between; font-size: 0.75rem; padding: 4px 0; color: var(--text-muted); }
+    .service-card-footer { padding: 0 20px 20px; }
+    .service-card-btn { width: 100%; padding: 10px; border-radius: var(--radius-sm); background: var(--bg-cream-alt); color: var(--text-main); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; border: 1px solid rgba(212, 163, 115, 0.4); text-align: center; }
+    .service-card:hover .service-card-btn { background: var(--brown-primary); color: #FFF; }
+
+    /* Контакты & Карта-заглушка */
+    .contacts-section { background-color: var(--bg-cream-alt); }
+    .contacts-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; }
+    .contact-card { background: #FFF; padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-warm); display: flex; gap: 16px; margin-bottom: 16px; }
+    .map-box {
+      min-height: 400px; background: #E8DED3; border-radius: var(--radius-lg);
+      border: 1px solid var(--border-warm); position: relative;
+      display: flex; flex-direction: column; justify-content: space-between; padding: 24px;
+    }
+    .map-pin-bubble { background: var(--brown-dark); color: #FFF; padding: 8px 14px; border-radius: var(--radius-sm); font-size: 0.8rem; margin-bottom: 8px; }
+    .map-pin-dot { width: 44px; height: 44px; background: linear-gradient(135deg, var(--brown-primary), var(--accent-warm)); border: 3px solid #FFF; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: #FFF; font-size: 20px; }
+
+    /* Footer */
+    .footer { background: var(--brown-dark); color: var(--accent-soft); padding: 56px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-bottom { padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; font-size: 0.75rem; color: #A69385; }
+
+    /* Адаптивность */
+    @media (max-width: 992px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid, .about-grid, .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .about-values-grid { grid-template-columns: 1fr; }
+      .nav-menu { display: none; }
+      .section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Хедер (Sticky) -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-badge">✦</div>
+        <div>
+          <span class="logo-text-title">Земфира</span>
+          <span class="logo-text-sub">Салон красоты • Могилев</span>
+        </div>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">О нас</a></li>
+          <li><a href="#services" class="nav-link">Услуги</a></li>
+          <li><a href="#contacts" class="nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+      <div>
+        <a href="#contacts" class="btn btn-primary">Записаться</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero-секция -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-pill">● Могилев, ул. Ленинская</div>
+          <h1 class="hero-title">Красота с душой</h1>
+          <p class="hero-subtitle">
+            Пространство истинного умиротворения, эстетики и заботы хозяйки Земфиры. Раскрываем вашу индивидуальность без спешки и шаблонов.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contacts" class="btn btn-primary">Записаться</a>
+            <a href="#services" class="btn btn-secondary">Наши услуги</a>
+          </div>
+          <div class="hero-stats">
+            <div><div class="hero-stat-num">12+</div><div class="hero-stat-label">лет опыта Земфиры</div></div>
+            <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">стерильность СанПиН</div></div>
+            <div><div class="hero-stat-num">4.9 ★</div><div class="hero-stat-label">рейтинг гостей</div></div>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Салон Земфира" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- О салоне -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">История создания</span>
+        <h2 class="section-title">О салоне «Земфира»</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <div class="about-photo-wrapper">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=700&q=80" alt="Земфира" class="about-photo">
+            <div class="about-photo-overlay">
+              <h3>Земфира</h3>
+              <p style="font-size: 12px; color: #E6CCB2;">Основательница и ведущий арт-мастер</p>
+            </div>
+          </div>
+          <div class="about-quote">
+            «Для меня салон — это не про конвейер, а про встречу добрых друзей и бережную заботу о вашей красоте.»
+          </div>
+        </div>
+        <div>
+          <p style="margin-bottom: 16px;">
+            История салона началась более 12 лет назад с мечты Земфиры создать в родном Могилеве место, где высокое европейское мастерство сочетается с искренней душевностью.
+          </p>
+          <p style="margin-bottom: 16px;">
+            В 2017 году на пешеходной улице Ленинской открылось наше пространство. Здесь каждого гостя ждут авторский чай, расслабляющая музыка и безупречная стерилизация инструментов.
+          </p>
+          <div class="about-values-grid">
+            <div class="value-box"><div>♥</div><div><strong>Забота без спешки</strong><p style="font-size:12px; color:#6F5E53;">Фокус на вашем отдыхе.</p></div></div>
+            <div class="value-box"><div>✓</div><div><strong>СанПиН чистота</strong><p style="font-size:12px; color:#6F5E53;">Автоклав и крафт-пакеты.</p></div></div>
+            <div class="value-box"><div>✦</div><div><strong>Премиум эко-составы</strong><p style="font-size:12px; color:#6F5E53;">Безопасные красители.</p></div></div>
+            <div class="value-box"><div>☕</div><div><strong>Атмосфера уюта</strong><p style="font-size:12px; color:#6F5E53;">Свежий кофе и травы.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Меню услуг -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Прейскурант</span>
+        <h2 class="section-title">Меню услуг</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="services-grid">
+        <!-- 1: Парикмахерские услуги -->
+        <div class="service-card">
+          <div class="service-card-media"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Парикмахерские услуги" class="service-card-img"></div>
+          <div class="service-card-body">
+            <div class="service-card-header"><h3 class="service-card-title">Парикмахерские услуги</h3><span class="service-card-price">от 35 BYN</span></div>
+            <p class="service-card-desc">Авторские стрижки, сложное окрашивание (Airtouch, Balayage) и молекулярное спа-восстановление.</p>
+            <ul class="service-item-list">
+              <li class="service-item-row"><span>Стрижка + брашинг</span><b>от 45 BYN</b></li>
+              <li class="service-item-row"><span>Сложное окрашивание</span><b>от 160 BYN</b></li>
+            </ul>
+          </div>
+          <div class="service-card-footer"><a href="#contacts" class="service-card-btn">Записаться</a></div>
+        </div>
+        <!-- 2: Маникюр -->
+        <div class="service-card">
+          <div class="service-card-media"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Маникюр" class="service-card-img"></div>
+          <div class="service-card-body">
+            <div class="service-card-header"><h3 class="service-card-title">Маникюр</h3><span class="service-card-price">от 30 BYN</span></div>
+            <p class="service-card-desc">Аппаратный, японский восстанавливающий уход Masura, стойкие гель-лаки и авторский дизайн.</p>
+            <ul class="service-item-list">
+              <li class="service-item-row"><span>Комбинированный маникюр</span><b>от 30 BYN</b></li>
+              <li class="service-item-row"><span>Маникюр + гель-лак</span><b>от 50 BYN</b></li>
+            </ul>
+          </div>
+          <div class="service-card-footer"><a href="#contacts" class="service-card-btn">Записаться</a></div>
+        </div>
+        <!-- 3: Педикюр -->
+        <div class="service-card">
+          <div class="service-card-media"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=600&q=80" alt="Педикюр" class="service-card-img"></div>
+          <div class="service-card-body">
+            <div class="service-card-header"><h3 class="service-card-title">Педикюр</h3><span class="service-card-price">от 45 BYN</span></div>
+            <p class="service-card-desc">SMART-обработка дисками с молекулярным маслом, деликатная полировка стоп и спа-уход.</p>
+            <ul class="service-item-list">
+              <li class="service-item-row"><span>SMART-педикюр полный</span><b>от 65 BYN</b></li>
+              <li class="service-item-row"><span>Парафинотерапия ног</span><b>от 25 BYN</b></li>
+            </ul>
+          </div>
+          <div class="service-card-footer"><a href="#contacts" class="service-card-btn">Записаться</a></div>
+        </div>
+        <!-- 4: Массаж -->
+        <div class="service-card">
+          <div class="service-card-media"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Массаж" class="service-card-img"></div>
+          <div class="service-card-body">
+            <div class="service-card-header"><h3 class="service-card-title">Массаж</h3><span class="service-card-price">от 40 BYN</span></div>
+            <p class="service-card-desc">Глубокое расслабление тела, снятие зажимов, скульптурный массаж лица и детокс-лимфодренаж.</p>
+            <ul class="service-item-list">
+              <li class="service-item-row"><span>Релакс аромамассаж</span><b>от 75 BYN</b></li>
+              <li class="service-item-row"><span>Массаж лица (50м)</span><b>от 60 BYN</b></li>
+            </ul>
+          </div>
+          <div class="service-card-footer"><a href="#contacts" class="service-card-btn">Записаться</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts" class="section contacts-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Локация</span>
+        <h2 class="section-title">Контакты</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="contacts-grid">
+        <div>
+          <div class="contact-card">
+            <div style="font-size:24px;">📍</div>
+            <div>
+              <p style="font-size:11px; text-transform:uppercase; color:#8C5D3E; font-weight:600;">Адрес</p>
+              <h3>г. Могилев, ул. Ленинская, 45</h3>
+              <p style="font-size:13px; color:#6F5E53;">Пешеходная зона, исторический центр Могилева.</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div style="font-size:24px;">⏱</div>
+            <div>
+              <p style="font-size:11px; text-transform:uppercase; color:#8C5D3E; font-weight:600;">Режим работы</p>
+              <h3>Пн — Сб: 09:00 – 21:00</h3>
+              <p style="font-size:13px; color:#6F5E53;">Воскресенье: 10:00 – 19:00</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div style="font-size:24px;">📞</div>
+            <div>
+              <p style="font-size:11px; text-transform:uppercase; color:#8C5D3E; font-weight:600;">Запись по телефону</p>
+              <h3><a href="tel:+375297458822" style="color:#6F4E37;">+375 (29) 745-88-22</a></h3>
+              <p style="font-size:13px; color:#6F5E53;">Звонки, Viber, Telegram</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карта-заглушка Могилева -->
+        <div class="map-box">
+          <div style="background:#FFF; padding:6px 14px; border-radius:999px; font-size:12px; font-weight:600; align-self:flex-start;">
+            ● Центр Могилева • Пешеходная ул. Ленинская
+          </div>
+          <div style="text-align:center; margin:auto 0;">
+            <div class="map-pin-bubble">Салон «Земфира» • дом 45</div>
+            <div class="map-pin-dot" style="margin:0 auto;">✦</div>
+          </div>
+          <div style="background:#FFF; padding:12px 16px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h5 style="font-size:13px;">Интерактивная карта-заглушка</h5>
+              <p style="font-size:11px; color:#6F5E53;">Ориентир: Площадь Звезд, Ратуша</p>
+            </div>
+            <a href="https://yandex.by/maps/?text=Могилев+ул+Ленинская+45" target="_blank" class="btn btn-primary" style="padding:8px 16px; font-size:11px;">
+              В навигаторе
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 style="color:#FFF; font-size:24px; margin-bottom:8px;">Земфира</h3>
+          <p style="font-size:13px; color:#C6B2A3;">Красота с душой. Уютный салон в центре Могилева с заботой о каждом госте.</p>
+        </div>
+        <div>
+          <p style="color:#D4A373; font-size:12px; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Услуги</p>
+          <ul style="list-style:none; font-size:13px; line-height:2;">
+            <li>Парикмахерские услуги</li>
+            <li>Маникюр</li>
+            <li>SMART-педикюр</li>
+            <li>Массаж</li>
+          </ul>
+        </div>
+        <div>
+          <p style="color:#D4A373; font-size:12px; text-transform:uppercase; font-weight:700; margin-bottom:12px;">Контакты</p>
+          <p style="font-size:13px; color:#C6B2A3; line-height:1.8;">
+            Могилев, ул. Ленинская, 45<br>
+            +375 (29) 745-88-22<br>
+            Пн–Сб 09:00 – 21:00
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Салон красоты «Земфира». Все права защищены.</div>
+        <div>Могилев, Беларусь</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
