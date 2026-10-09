@@ -4,16 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Салон красоты «Земфира» | Могилев — парикмахерские услуги, маникюр, педикюр, массаж</title>
-<meta name="description" content="Салон красоты «Земфира» в Могилеве, пешеходная ул. Ленинская, 45: парикмахерские услуги и сложное окрашивание, маникюр, SMART-педикюр, спа и массаж. Красота с душой.">
+<meta name="description" content="Салон красоты «Земфира» в Могилеве, ул. Королёва, 25: парикмахерские услуги и сложное окрашивание, маникюр, SMART-педикюр, спа и массаж. Красота с душой.">
 <meta name="theme-color" content="#FBF9F6">
+
+<!-- ===== Open Graph: превью ссылки в Telegram, Viber, Facebook и др. ===== -->
+<meta property="og:title" content="Салон красоты «Земфира» в Могилёве">
+<meta property="og:description" content="Стрижки, окрашивание, маникюр и уходовые процедуры. Узнайте цены, познакомьтесь с салоном и запишитесь на процедуру.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_BY">
+<meta property="og:site_name" content="Салон красоты «Земфира»">
+<meta property="og:image:alt" content="Интерьер салона красоты «Земфира» в Могилёве">
+
+<!--
+  og:url и og:image нужно заполнить ПОСЛЕ публикации сайта.
+  Замените https://example.com на реальный публичный домен сайта.
+  og:image — это ОТДЕЛЬНОЕ горизонтальное изображение-превью (желательно 1200x630 px, JPG/PNG),
+  загруженное на тот же хостинг, что и сайт. Готового файла 1200x630 в проекте сейчас нет;
+  ближайший по ориентации снимок — Парикмахерские_услуги.png (1348x813), его можно подготовить
+  до 1200x630. Раскомментируйте строки ниже и подставьте реальные URL.
+
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+-->
+
+<!-- ===== Twitter / X ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Салон красоты «Земфира» в Могилёве">
+<meta name="twitter:description" content="Стрижки, окрашивание, маникюр и уходовые процедуры. Узнайте цены, познакомьтесь с салоном и запишитесь на процедуру.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
   /* Системный стек шрифтов: Inter -> Roboto -> Tahoma -> Segoe UI (кириллица поддерживается) */
   var salonFont = ["Inter", "Roboto", "Tahoma", "Segoe UI", "system-ui", "sans-serif"];
+  var salonDisplay = ["Playfair Display", "Georgia", "Times New Roman", "serif"];
   tailwind.config = {
     darkMode: "class",
     theme: {
@@ -31,13 +61,15 @@
           "on-surface": "#23201D",
           "on-surface-variant": "#6A645D",
           "outline-delicate": "#E6DFD5",
-          "border-delicate": "#ECE5DB"
+          "border-delicate": "#ECE5DB",
+          "success": "#3F6B4E",
+          "error": "#A8443A"
         },
         fontFamily: {
-          "display-xl": salonFont,
-          "headline-lg": salonFont,
-          "headline-md": salonFont,
-          "headline-sm": salonFont,
+          "display-xl": salonDisplay,
+          "headline-lg": salonDisplay,
+          "headline-md": salonDisplay,
+          "headline-sm": salonDisplay,
           "body-lg": salonFont,
           "body-md": salonFont,
           "label-lg": salonFont,
@@ -75,11 +107,11 @@
 <!-- ============================ ШАПКА ============================ -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-md border-b border-border-delicate/70">
   <div class="h-20 max-w-[1240px] mx-auto px-6 md:px-10 flex items-center justify-between gap-6 lg:gap-10">
-    <a href="#hero" class="flex items-center gap-3 group">
+    <a href="#hero" class="flex items-center gap-3 group shrink-0">
       <span class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-container text-white flex items-center justify-center text-lg shrink-0">✦</span>
-      <span class="leading-none">
+      <span class="leading-none whitespace-nowrap">
         <span class="block font-headline-md text-[21px] tracking-[0.18em] uppercase text-on-surface">Земфира</span>
-        <span class="block text-[9px] uppercase tracking-[0.22em] text-on-surface-variant/80 mt-1">Салон красоты • Могилев</span>
+        <span class="hidden xl:block text-[11px] uppercase tracking-[0.2em] text-on-surface-variant mt-1">Салон красоты • Могилев</span>
       </span>
     </a>
     <nav class="hidden lg:flex flex-1 items-center justify-evenly gap-x-3 px-0 xl:px-16 text-[12px] tracking-[0.08em] xl:text-[13px] xl:tracking-[0.14em] uppercase text-on-surface-variant whitespace-nowrap">
@@ -93,7 +125,7 @@
       <a class="hidden sm:inline-flex w-11 h-11 rounded-full border border-border-delicate items-center justify-center text-on-surface hover:border-primary/50 hover:text-primary transition-colors shrink-0" href="tel:+375297458822" aria-label="Позвонить: +375 (29) 745-88-22" title="+375 (29) 745-88-22">
         <span aria-hidden="true" class="material-symbols-outlined text-[20px]">call</span>
       </a>
-      <a class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-all text-xs uppercase tracking-[0.18em] font-medium" href="#booking">Записаться</a>
+      <a class="hidden sm:inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-all text-xs uppercase tracking-[0.18em] font-medium" href="#booking">Записаться</a>
       <button id="menuBtn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden w-11 h-11 rounded-full border border-border-delicate flex items-center justify-center text-on-surface hover:border-primary/50 transition-colors">
         <span aria-hidden="true" class="material-symbols-outlined text-[22px]" id="menuIcon">menu</span>
       </button>
@@ -107,7 +139,7 @@
       <a class="py-3 border-b border-border-delicate/60 hover:text-primary transition-colors" href="#masters">Мастера</a>
       <a class="py-3 border-b border-border-delicate/60 hover:text-primary transition-colors" href="#location">Контакты</a>
       <a class="py-3 text-primary hover:underline" href="tel:+375297458822">+375 (29) 745-88-22</a>
-      <a class="mt-3 mb-2 inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-white text-xs uppercase tracking-[0.18em] font-medium" href="#booking">Записаться онлайн</a>
+      <a class="mt-3 mb-2 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-primary text-white text-xs uppercase tracking-[0.18em] font-medium" href="#booking">Записаться онлайн</a>
     </nav>
   </div>
 </header>
@@ -118,34 +150,32 @@
   <div class="max-w-[1240px] mx-auto px-6 md:px-10 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       <div class="lg:col-span-6 flex flex-col items-start pt-4 lg:pt-0">
-        <span class="text-[12px] uppercase tracking-[0.28em] text-primary mb-6 font-medium">Могилев • Пешеходная ул. Ленинская</span>
-        <h1 class="font-display-xl text-[42px] sm:text-[54px] lg:text-[64px] leading-[1.1] text-on-surface font-normal mb-6 tracking-tight">
-          Красота <br><span class="italic font-light text-primary">с душой</span>
+        <span class="text-xs uppercase tracking-[0.28em] text-primary mb-6 font-medium">Могилев • ул. Королёва, 25</span>
+        <h1 class="font-display-xl text-[40px] sm:text-[56px] lg:text-[68px] leading-[1.05] text-on-surface font-normal mb-6">
+          Красота <br><span class="italic text-primary">с душой</span>
         </h1>
-        <p class="font-body-lg text-base sm:text-lg text-on-surface-variant/90 max-w-lg mb-10 leading-relaxed font-light">
+        <p class="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed">
           Камерное пространство эстетики и заботы хозяйки Земфиры в самом сердце Могилева. Авторские стрижки, стойкие покрытия и спа-ритуалы — без спешки и шаблонов.
         </p>
-        <div class="flex flex-wrap items-center gap-6 mb-12">
-          <a class="px-8 py-3.5 rounded-full bg-primary text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-dark transition-colors shadow-sm" href="#booking">Записаться онлайн</a>
-          <a class="text-xs uppercase tracking-[0.2em] text-on-surface hover:text-primary transition-colors flex items-center gap-1 group" href="#services">
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6 mb-10">
+          <a class="px-8 py-4 rounded-full bg-primary text-white text-xs uppercase tracking-[0.18em] font-medium hover:bg-primary-dark transition-colors shadow-sm" href="#booking">Записаться онлайн</a>
+          <a class="min-h-[44px] px-1 inline-flex items-center text-xs uppercase tracking-[0.18em] text-on-surface hover:text-primary transition-colors group" href="#services">
             <span>Услуги и цены</span>
-            <span aria-hidden="true" class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-[16px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </a>
         </div>
-        <div class="pt-6 border-t border-border-delicate w-full flex flex-wrap items-center gap-y-2 gap-x-8 text-xs text-on-surface-variant/80 tracking-wide font-light">
+        <div class="pt-6 border-t border-border-delicate w-full flex flex-wrap items-center gap-y-2 gap-x-6 sm:gap-x-8 text-sm text-on-surface-variant">
           <span>12 лет опыта Земфиры</span>
-          <span class="text-primary/40">•</span>
           <span>100% стерильность по СанПиН</span>
-          <span class="text-primary/40">•</span>
           <span>Рейтинг 4.9 из 340+ отзывов</span>
         </div>
       </div>
       <div class="lg:col-span-6 relative">
-        <div class="relative w-full aspect-[4/5] rounded-[36px] overflow-hidden shadow-[0_20px_50px_rgba(110,80,50,0.08)] bg-surface">
+        <div class="relative w-full aspect-[4/5] rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(110,80,50,0.08)] bg-surface">
           <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" alt="Атмосфера салона красоты «Земфира» в Могилеве" class="w-full h-full object-cover object-center scale-[1.02] hover:scale-100 transition-transform duration-700 ease-out">
         </div>
         <div class="hidden sm:block absolute -bottom-6 -left-6 bg-surface-card/95 backdrop-blur-md px-6 py-4 rounded-2xl border border-border-delicate/80 shadow-sm max-w-[230px]">
-          <p class="text-[11px] tracking-[0.2em] uppercase text-primary mb-1">Атмосфера</p>
+          <p class="text-xs tracking-[0.2em] uppercase text-primary mb-1">Атмосфера</p>
           <p class="text-xs text-on-surface-variant leading-snug">Приглушенный свет, ароматерапия и авторский травяной чай</p>
         </div>
       </div>
@@ -158,16 +188,16 @@
   <div class="max-w-[1240px] mx-auto px-6 md:px-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
       <div class="lg:col-span-5 flex justify-center lg:justify-start">
-        <div class="relative w-full max-w-sm aspect-[3/4] rounded-[50px] overflow-hidden shadow-sm bg-surface-subtle">
+        <div class="relative w-full max-w-sm aspect-[3/4] rounded-[28px] overflow-hidden shadow-sm bg-surface-subtle">
           <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80" alt="Земфира — основательница салона красоты" class="w-full h-full object-cover object-top">
         </div>
       </div>
       <div class="lg:col-span-7 flex flex-col">
-        <span class="text-[11px] uppercase tracking-[0.26em] text-primary mb-4 font-medium">Философия пространства</span>
-        <h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface font-normal tracking-tight mb-8">
+        <span class="text-xs uppercase tracking-[0.26em] text-primary mb-4 font-medium">Философия пространства</span>
+        <h2 class="font-headline-lg text-[30px] sm:text-[40px] leading-[1.15] text-on-surface font-normal mb-8">
           «Красота — это естественность, спокойствие и время для себя»
         </h2>
-        <p class="font-body-md text-base text-on-surface-variant leading-relaxed font-light mb-6">
+        <p class="font-body-md text-base text-on-surface-variant leading-relaxed font-normal mb-6">
           История салона началась более 12 лет назад с мечты Земфиры создать в родном Могилеве место, где высокое мастерство сочетается с искренней душевностью. Здесь нет салонной спешки и шаблонных решений: каждый визит — персональный диалог и забота о здоровье ваших волос и кожи.
         </p>
         <div class="space-y-6 pt-2 border-t border-border-delicate/80">
@@ -175,34 +205,34 @@
             <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
             <div>
               <h4 class="text-sm font-medium tracking-wide text-on-surface mb-0.5">Индивидуальное время без спешки</h4>
-              <p class="text-xs text-on-surface-variant font-light">В каждый слот заложен запас времени на консультацию, процедуру и отдых за чашкой авторского чая.</p>
+              <p class="text-xs text-on-surface-variant font-normal">В каждый слот заложен запас времени на консультацию, процедуру и отдых за чашкой авторского чая.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
             <div>
               <h4 class="text-sm font-medium tracking-wide text-on-surface mb-0.5">Безупречная стерильность по СанПиН</h4>
-              <p class="text-xs text-on-surface-variant font-light">Трёхступенчатая дезинфекция, автоклав и вскрытие крафт-пакета непосредственно перед вами.</p>
+              <p class="text-xs text-on-surface-variant font-normal">Трёхступенчатая дезинфекция, автоклав и вскрытие крафт-пакета непосредственно перед вами.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
             <div>
               <h4 class="text-sm font-medium tracking-wide text-on-surface mb-0.5">Премиальные эко-составы</h4>
-              <p class="text-xs text-on-surface-variant font-light">Работаем на сертифицированных безаммиачных формулах и уходах Davines, Lebel и Masura.</p>
+              <p class="text-xs text-on-surface-variant font-normal">Работаем на сертифицированных безаммиачных формулах и уходах Davines, Lebel и Masura.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></span>
             <div>
               <h4 class="text-sm font-medium tracking-wide text-on-surface mb-0.5">Атмосфера уюта</h4>
-              <p class="text-xs text-on-surface-variant font-light">Расслабляющая музыка, ароматерапия, свежий кофе и травяные напитки — часть каждого визита.</p>
+              <p class="text-xs text-on-surface-variant font-normal">Расслабляющая музыка, ароматерапия, свежий кофе и травяные напитки — часть каждого визита.</p>
             </div>
           </div>
         </div>
         <div class="mt-8 pt-4">
           <span class="font-headline-sm text-lg text-on-surface">Земфира</span>
-          <p class="text-xs uppercase tracking-widest text-on-surface-variant/70 mt-0.5">Основательница и арт-директор</p>
+          <p class="text-xs uppercase tracking-widest text-on-surface-variant mt-0.5">Основательница и арт-директор</p>
         </div>
       </div>
     </div>
@@ -213,11 +243,11 @@
 <section id="services" class="w-full py-24">
   <div class="max-w-[1240px] mx-auto px-6 md:px-10">
     <div class="text-center max-w-2xl mx-auto mb-14">
-      <span class="text-[11px] uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Направления</span>
-      <h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface font-normal tracking-tight">
+      <span class="text-xs uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Направления</span>
+      <h2 class="font-headline-lg text-[30px] sm:text-[40px] leading-[1.15] text-on-surface font-normal">
         Чем мы можем вас порадовать
       </h2>
-      <p class="text-sm text-on-surface-variant font-light mt-3">
+      <p class="text-sm text-on-surface-variant font-normal mt-3">
         Четыре направления салона «Земфира». Полный прейскурант с описанием процедур — ниже на этой странице.
       </p>
     </div>
@@ -226,21 +256,21 @@
       <!-- Карточка 1: Парикмахерские услуги (локальное фото) -->
       <article class="group bg-surface-card rounded-[28px] overflow-hidden border border-border-delicate/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:shadow-lg">
         <div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-subtle">
-          <img src="Парикмахерские_услуги.png" alt="Парикмахерские услуги в салоне «Земфира»" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+          <img src="hair-services.webp" width="800" height="482" alt="Парикмахерские услуги в салоне «Земфира»" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
         </div>
         <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-headline-sm text-xl text-on-surface leading-snug">Парикмахерские услуги</h3>
-            <span class="shrink-0 text-[11px] px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium tracking-wide whitespace-nowrap">от 45 BYN</span>
+          <div class="mb-3">
+            <span class="inline-block text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium tracking-wide">от 45 BYN</span>
+            <h3 class="font-headline-sm text-xl text-on-surface leading-snug mt-2">Парикмахерские услуги</h3>
           </div>
-          <p class="text-xs text-on-surface-variant font-light leading-relaxed mb-5">
+          <p class="text-xs text-on-surface-variant font-normal leading-relaxed mb-5">
             Авторские стрижки, сложное окрашивание (Airtouch, Balayage) и молекулярное спа-восстановление волос.
           </p>
           <ul class="mt-auto space-y-2 pt-4 border-t border-border-delicate/70">
             <li class="flex items-baseline justify-between gap-2 text-xs text-on-surface-variant"><span>Стрижка + брашинг</span><b class="text-on-surface font-medium whitespace-nowrap">от 45 BYN</b></li>
             <li class="flex items-baseline justify-between gap-2 text-xs text-on-surface-variant"><span>Сложное окрашивание</span><b class="text-on-surface font-medium whitespace-nowrap">от 160 BYN</b></li>
           </ul>
-          <a href="#booking" class="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium">Записаться</a>
+          <a href="#booking" class="mt-6 inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium">Записаться</a>
         </div>
       </article>
 
@@ -250,39 +280,39 @@
           <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Маникюр и покрытие гель-лаком" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
         </div>
         <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-headline-sm text-xl text-on-surface leading-snug">Маникюр</h3>
-            <span class="shrink-0 text-[11px] px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium tracking-wide whitespace-nowrap">от 30 BYN</span>
+          <div class="mb-3">
+            <span class="inline-block text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium tracking-wide">от 30 BYN</span>
+            <h3 class="font-headline-sm text-xl text-on-surface leading-snug mt-2">Маникюр</h3>
           </div>
-          <p class="text-xs text-on-surface-variant font-light leading-relaxed mb-5">
+          <p class="text-xs text-on-surface-variant font-normal leading-relaxed mb-5">
             Аппаратный и японский восстанавливающий уход Masura, тонкое укрепление и стойкие гель-лаки.
           </p>
           <ul class="mt-auto space-y-2 pt-4 border-t border-border-delicate/70">
             <li class="flex items-baseline justify-between gap-2 text-xs text-on-surface-variant"><span>Комбинированный маникюр</span><b class="text-on-surface font-medium whitespace-nowrap">от 30 BYN</b></li>
             <li class="flex items-baseline justify-between gap-2 text-xs text-on-surface-variant"><span>Маникюр + гель-лак</span><b class="text-on-surface font-medium whitespace-nowrap">от 50 BYN</b></li>
           </ul>
-          <a href="#booking" class="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium">Записаться</a>
+          <a href="#booking" class="mt-6 inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium">Записаться</a>
         </div>
       </article>
 
       <!-- Карточка 3: Педикюр (локальное фото) -->
       <article class="group bg-surface-card rounded-[28px] overflow-hidden border border-border-delicate/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:shadow-lg">
         <div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-subtle">
-          <img src="Педикюр.png" alt="SMART-педикюр в салоне «Земфира»" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+          <img src="pedicure.webp" width="800" height="539" alt="SMART-педикюр в салоне «Земфира»" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
         </div>
         <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-headline-sm text-xl text-on-surface leading-snug">Педикюр</h3>
-            <span class="shrink-0 text-[11px] px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium tracking-wide whitespace-nowrap">от 55 BYN</span>
+          <div class="mb-3">
+            <span class="inline-block text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium tracking-wide">от 55 BYN</span>
+            <h3 class="font-headline-sm text-xl text-on-surface leading-snug mt-2">Педикюр</h3>
           </div>
-          <p class="text-xs text-on-surface-variant font-light leading-relaxed mb-5">
+          <p class="text-xs text-on-surface-variant font-normal leading-relaxed mb-5">
             SMART-обработка дисками с молекулярным маслом, деликатная полировка стоп и спа-уход за кожей.
           </p>
           <ul class="mt-auto space-y-2 pt-4 border-t border-border-delicate/70">
             <li class="flex items-baseline justify-between gap-2 text-xs text-on-surface-variant"><span>SMART-педикюр полный</span><b class="text-on-surface font-medium whitespace-nowrap">от 65 BYN</b></li>
             <li class="flex items-baseline justify-between gap-2 text-xs text-on-surface-variant"><span>Парафинотерапия ног</span><b class="text-on-surface font-medium whitespace-nowrap">от 25 BYN</b></li>
           </ul>
-          <a href="#booking" class="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium">Записаться</a>
+          <a href="#booking" class="mt-6 inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium">Записаться</a>
         </div>
       </article>
 
@@ -292,18 +322,18 @@
           <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Спа-ритуалы и массаж лица" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
         </div>
         <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-headline-sm text-xl text-on-surface leading-snug">Массаж</h3>
-            <span class="shrink-0 text-[11px] px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium tracking-wide whitespace-nowrap">от 60 BYN</span>
+          <div class="mb-3">
+            <span class="inline-block text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium tracking-wide">от 60 BYN</span>
+            <h3 class="font-headline-sm text-xl text-on-surface leading-snug mt-2">Массаж</h3>
           </div>
-          <p class="text-xs text-on-surface-variant font-light leading-relaxed mb-5">
+          <p class="text-xs text-on-surface-variant font-normal leading-relaxed mb-5">
             Глубокое расслабление тела, снятие зажимов, скульптурный массаж лица и детокс-лимфодренаж.
           </p>
           <ul class="mt-auto space-y-2 pt-4 border-t border-border-delicate/70">
             <li class="flex items-baseline justify-between gap-2 text-xs text-on-surface-variant"><span>Релакс аромамассаж</span><b class="text-on-surface font-medium whitespace-nowrap">от 75 BYN</b></li>
             <li class="flex items-baseline justify-between gap-2 text-xs text-on-surface-variant"><span>Массаж лица (50 мин)</span><b class="text-on-surface font-medium whitespace-nowrap">от 60 BYN</b></li>
           </ul>
-          <a href="#booking" class="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium">Записаться</a>
+          <a href="#booking" class="mt-6 inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium">Записаться</a>
         </div>
       </article>
     </div><!-- /grid направлений -->
@@ -311,22 +341,22 @@
     <!-- ===== Прейскурант услуг (аккордеон) ===== -->
     <div class="max-w-[1040px] mx-auto mt-20">
       <div class="text-center max-w-xl mx-auto mb-12">
-        <span class="text-[11px] uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Прейскурант</span>
-        <h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface font-normal tracking-tight">
+        <span class="text-xs uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Прейскурант</span>
+        <h2 class="font-headline-lg text-[30px] sm:text-[40px] leading-[1.15] text-on-surface font-normal">
           Меню авторских услуг
         </h2>
-        <p class="text-sm text-on-surface-variant font-light mt-3">
+        <p class="text-sm text-on-surface-variant font-normal mt-3">
           Выберите направление, чтобы открыть детали процедур. Цены указаны в белорусских рублях и включают спа-ритуалы и напитки.
         </p>
       </div>
 
       <div class="space-y-4">
         <!-- Категория 1: Волосы и сложное окрашивание -->
-        <details class="group bg-surface-card rounded-3xl border border-border-delicate/80 transition-all duration-300 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+        <details class="group bg-surface-card rounded-[28px] border border-border-delicate/80 transition-all duration-300 overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
           <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none list-none hover:bg-surface-subtle/30 transition-colors">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
               <h3 class="font-headline-sm text-xl sm:text-2xl text-on-surface">Волосы и сложное окрашивание</h3>
-              <span class="text-xs font-body-md uppercase tracking-widest text-on-surface-variant/70">Airtouch • Lebel • Davines</span>
+              <span class="text-xs font-body-md uppercase tracking-widest text-on-surface-variant">Airtouch • Lebel • Davines</span>
             </div>
             <div class="flex items-center gap-3 shrink-0 ml-4">
               <span class="text-xs font-medium text-primary uppercase tracking-widest hidden sm:inline-block">4 процедуры</span>
@@ -339,18 +369,18 @@
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <div class="flex items-center gap-3">
                   <h4 class="text-base text-on-surface font-medium">Сложное многомерное окрашивание</h4>
-                  <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-medium tracking-wide">Флагман</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-medium tracking-wide">Флагман</span>
                 </div>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Airtouch, Balayage, шатуш или рельефный блонд с защитой дисульфидных связей волоса, тонированием и индивидуальным подбором оттенка.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~3,5 часа</span><span>•</span><span>Включает укладку и уход</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 160 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
             <div class="border-t border-border-delicate/50"></div>
@@ -358,32 +388,32 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Авторская архитектурная стрижка + брашинг</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Стрижка по форме черепа и естественному росту волос, не требующая долгой домашней укладки. Включает диагностику кожи головы, детокс-шампунь и брашинг.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~1 час</span><span>•</span><span>Земфира / топ-мастер</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 45 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
             <div class="border-t border-border-delicate/50"></div>
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Молекулярный спа-уход и экранирование Davines</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Многоэтапное насыщение кортекса кератином, липидный комплекс и запаивание кутикулы паром для зеркального глянца и мягкости.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~1,5 часа</span><span>•</span><span>Итальянская органика</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 80 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
             <div class="border-t border-border-delicate/50"></div>
@@ -391,27 +421,27 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Тонирование и глянцевание волос</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Безаммиачный белковый коктейль для освежения оттенка блонда или брюнета, устранения тусклости и придания благородного перелива.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~1 час</span><span>•</span><span>Lebel Color Prefal</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 70 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
           </div>
         </details>
 
         <!-- Категория 2: Ногтевой сервис -->
-        <details class="group bg-surface-card rounded-3xl border border-border-delicate/80 transition-all duration-300 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+        <details class="group bg-surface-card rounded-[28px] border border-border-delicate/80 transition-all duration-300 overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
           <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none list-none hover:bg-surface-subtle/30 transition-colors">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
               <h3 class="font-headline-sm text-xl sm:text-2xl text-on-surface">Ногтевой сервис</h3>
-              <span class="text-xs font-body-md uppercase tracking-widest text-on-surface-variant/70">Японский эко-уход • Masura</span>
+              <span class="text-xs font-body-md uppercase tracking-widest text-on-surface-variant">Японский эко-уход • Masura</span>
             </div>
             <div class="flex items-center gap-3 shrink-0 ml-4">
               <span class="text-xs font-medium text-primary uppercase tracking-widest hidden sm:inline-block">3 процедуры</span>
@@ -423,16 +453,16 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Японский эко-маникюр Masura</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Атравматичная техника обработки кутикулы, втирание питательной минеральной пасты с диатомовой глиной и полировка натуральным пчелиным воском.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~1 час</span><span>•</span><span>Натуральный глянец до 3 недель</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 35 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
             <div class="border-t border-border-delicate/50"></div>
@@ -440,16 +470,16 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Маникюр с тонким укреплением и стойким покрытием</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Безопасный комбинированный маникюр, анатомическое выравнивание без утолщения торцов, трендовые нюдовые или глубокие оттенки. Снятие входит в стоимость.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~1,5 часа</span><span>•</span><span>Гарантия стойкости</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 50 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
             <div class="border-t border-border-delicate/50"></div>
@@ -457,27 +487,27 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Экспресс-уход и полировка ногтей пчелиным воском</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Деликатный гигиенический опил, ванночка с морской солью и запечатывание ногтевой пластины органическим воском с эфирным маслом лаванды.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~45 мин</span><span>•</span><span>Для естественного ухода</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 30 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
 
           </div>
         </details>
         <!-- Категория 3: Спа и массаж лица -->
-        <details class="group bg-surface-card rounded-3xl border border-border-delicate/80 transition-all duration-300 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+        <details class="group bg-surface-card rounded-[28px] border border-border-delicate/80 transition-all duration-300 overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
           <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none list-none hover:bg-surface-subtle/30 transition-colors">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
               <h3 class="font-headline-sm text-xl sm:text-2xl text-on-surface">Спа и массаж лица</h3>
-              <span class="text-xs font-body-md uppercase tracking-widest text-on-surface-variant/70">Скульптурирование • Релакс • Арома</span>
+              <span class="text-xs font-body-md uppercase tracking-widest text-on-surface-variant">Скульптурирование • Релакс • Арома</span>
             </div>
             <div class="flex items-center gap-3 shrink-0 ml-4">
               <span class="text-xs font-medium text-primary uppercase tracking-widest hidden sm:inline-block">3 процедуры</span>
@@ -489,16 +519,16 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Скульптурно-буккальный массаж лица</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Глубокая проработка мимических мышц через ротовую полость и внешний контур. Моделирует скулы, убирает зажимы челюсти, освежает цвет лица.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>50 мин</span><span>•</span><span>Мастер Екатерина</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 60 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
             <div class="border-t border-border-delicate/50"></div>
@@ -506,16 +536,16 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Релакс аромамассаж тёплыми маслами</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Мягкое прогревание и релаксация шейно-воротниковой зоны и спины на основе органического масла миндаля с нотами сандала и вербены.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>60 мин</span><span>•</span><span>Полная перезагрузка</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 75 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
             <div class="border-t border-border-delicate/50"></div>
@@ -523,16 +553,16 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Лимфодренажный детокс-массаж</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Устранение отёчности, стимуляция естественного оттока лимфы, маска с водорослями и завершающий криосферный массаж.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~55 мин</span><span>•</span><span>Видимый тонус кожи</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 65 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
 
@@ -540,11 +570,11 @@
         </details>
 
         <!-- Категория 4: Педикюр и подология -->
-        <details class="group bg-surface-card rounded-3xl border border-border-delicate/80 transition-all duration-300 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+        <details class="group bg-surface-card rounded-[28px] border border-border-delicate/80 transition-all duration-300 overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
           <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none list-none hover:bg-surface-subtle/30 transition-colors">
             <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
               <h3 class="font-headline-sm text-xl sm:text-2xl text-on-surface">Педикюр &amp; подология</h3>
-              <span class="text-xs font-body-md uppercase tracking-widest text-on-surface-variant/70">SMART-диски • Молекулярный уход</span>
+              <span class="text-xs font-body-md uppercase tracking-widest text-on-surface-variant">SMART-диски • Молекулярный уход</span>
             </div>
             <div class="flex items-center gap-3 shrink-0 ml-4">
               <span class="text-xs font-medium text-primary uppercase tracking-widest hidden sm:inline-block">2 процедуры</span>
@@ -556,16 +586,16 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">SMART-педикюр стоп и пальчиков молекулярным маслом</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Аппаратная бережная полировка запатентованными SMART-дисками с молекулярным маслом чайного дерева. Избавление от трещин и сухости на срок до 6 недель.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~1,5 часа</span><span>•</span><span>Стерильность 100%</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 65 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
             <div class="border-t border-border-delicate/50"></div>
@@ -573,16 +603,16 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 group/item">
               <div class="pr-0 sm:pr-8 max-w-2xl">
                 <h4 class="text-base text-on-surface font-medium">Эстетический педикюр с покрытием</h4>
-                <p class="text-xs sm:text-[13px] text-on-surface-variant font-light mt-1.5 leading-relaxed">
+                <p class="text-xs sm:text-[13px] text-on-surface-variant font-normal mt-1.5 leading-relaxed">
                   Бережная обработка пальчиков, лёгкое выравнивание формы ногтей и тонкое стойкое покрытие премиум-гель-лаком со смягчающим спа-кремом.
                 </p>
-                <div class="flex items-center gap-4 mt-2 text-[11px] text-on-surface-variant/70 tracking-wider">
+                <div class="flex items-center gap-4 mt-2 text-xs text-on-surface-variant tracking-wider">
                   <span>~1 час 15 мин</span><span>•</span><span>Безопасные составы</span>
                 </div>
               </div>
               <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0">
                 <span class="text-base font-medium text-on-surface">от 55 BYN</span>
-                <a class="px-5 py-2 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-[11px] uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
+                <a class="px-6 py-3.5 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-white transition-colors text-xs uppercase tracking-[0.16em] font-medium" href="#booking">Записаться</a>
               </div>
             </div>
 
@@ -598,24 +628,24 @@
 </section>
 
 <!-- ============ 4. ПОРТФОЛИО РАБОТ МАСТЕРОВ ============ -->
-<section id="portfolio" class="w-full py-24 bg-surface/40 border-t border-border-delicate/70">
+<section id="portfolio" class="w-full py-24 bg-surface/50 border-t border-border-delicate/70">
   <div class="max-w-[1240px] mx-auto px-6 md:px-10">
     <div class="text-center max-w-xl mx-auto mb-14">
-      <span class="text-[11px] uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Эстетика результатов</span>
-      <h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface font-normal tracking-tight">
+      <span class="text-xs uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Эстетика результатов</span>
+      <h2 class="font-headline-lg text-[30px] sm:text-[40px] leading-[1.15] text-on-surface font-normal">
         Работы наших мастеров
       </h2>
-      <p class="text-sm text-on-surface-variant font-light mt-3">
+      <p class="text-sm text-on-surface-variant font-normal mt-3">
         Каждая деталь выполнена с уважением к вашей естественной красоте и качеству волос и кожи.
       </p>
     </div>
 
     <!-- Фильтр по направлениям -->
     <div id="portfolioTabs" class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
-      <button type="button" class="portfolio-tab px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all bg-primary text-white font-medium shadow-sm" aria-pressed="true" onclick="filterPortfolio('all', this)">Все направления</button>
-      <button type="button" class="portfolio-tab px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all bg-surface-card border border-border-delicate text-on-surface hover:border-primary/50 font-medium" aria-pressed="false" onclick="filterPortfolio('hair', this)">Окрашивания и стрижки</button>
-      <button type="button" class="portfolio-tab px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all bg-surface-card border border-border-delicate text-on-surface hover:border-primary/50 font-medium" aria-pressed="false" onclick="filterPortfolio('nails', this)">Маникюр и педикюр</button>
-      <button type="button" class="portfolio-tab px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all bg-surface-card border border-border-delicate text-on-surface hover:border-primary/50 font-medium" aria-pressed="false" onclick="filterPortfolio('spa', this)">Спа и массаж</button>
+      <button type="button" class="portfolio-tab px-6 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all bg-primary text-white font-medium shadow-sm" aria-pressed="true" onclick="filterPortfolio('all', this)">Все направления</button>
+      <button type="button" class="portfolio-tab px-6 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all bg-surface-card border border-border-delicate text-on-surface hover:border-primary/50 font-medium" aria-pressed="false" onclick="filterPortfolio('hair', this)">Окрашивания и стрижки</button>
+      <button type="button" class="portfolio-tab px-6 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all bg-surface-card border border-border-delicate text-on-surface hover:border-primary/50 font-medium" aria-pressed="false" onclick="filterPortfolio('nails', this)">Маникюр и педикюр</button>
+      <button type="button" class="portfolio-tab px-6 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all bg-surface-card border border-border-delicate text-on-surface hover:border-primary/50 font-medium" aria-pressed="false" onclick="filterPortfolio('spa', this)">Спа и массаж</button>
     </div>
 
     <p id="portfolioCount" role="status" class="sr-only">Показано работ: 3</p>
@@ -623,27 +653,27 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       <!-- Работа 1: волосы -->
-      <div class="portfolio-item group bg-surface-card rounded-[32px] overflow-hidden border border-border-delicate/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:shadow-lg" data-category="hair">
+      <div class="portfolio-item group bg-surface-card rounded-[28px] overflow-hidden border border-border-delicate/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:shadow-lg" data-category="hair">
         <div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-subtle">
           <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80" alt="Сложное окрашивание и укладка волос" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
-          <div class="absolute top-4 left-4 bg-surface-card/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-border-delicate text-[11px] font-medium text-primary tracking-wide">
+          <div class="absolute top-4 left-4 bg-surface-card/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-border-delicate text-xs font-medium text-primary tracking-wide">
             Волосы &amp; окрашивание
           </div>
         </div>
         <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between">
           <div>
-            <div class="flex items-center justify-between text-xs text-on-surface-variant/70 mb-2">
+            <div class="flex items-center justify-between text-xs text-on-surface-variant mb-2">
               <span>Земфира • Арт-колорист</span>
               <span>~3,5 часа</span>
             </div>
             <h3 class="font-headline-sm text-lg text-on-surface mb-2 font-normal">Airtouch-растяжка в шоколадно-карамельный блонд</h3>
-            <p class="text-xs text-on-surface-variant font-light leading-relaxed">
+            <p class="text-xs text-on-surface-variant font-normal leading-relaxed">
               Деликатное осветление с сохранением плотности волос, глубокий корень и сияющий шелковистый брашинг на органике Lebel.
             </p>
           </div>
           <div class="pt-5 mt-5 border-t border-border-delicate/60 flex items-center justify-between">
-            <span class="text-xs text-on-surface-variant/80">Результат визита</span>
-            <a class="text-xs uppercase tracking-wider text-primary font-medium hover:underline inline-flex items-center gap-1" href="#booking">
+            <span class="text-xs text-on-surface-variant">Результат визита</span>
+            <a class="text-xs uppercase tracking-wider text-primary font-medium hover:underline inline-flex items-center gap-1 min-h-[44px]" href="#booking">
               <span>Повторить</span>
               <span aria-hidden="true" class="material-symbols-outlined text-[14px]">arrow_forward</span>
             </a>
@@ -652,27 +682,27 @@
       </div>
 
       <!-- Работа 2: ногтевой сервис -->
-      <div class="portfolio-item group bg-surface-card rounded-[32px] overflow-hidden border border-border-delicate/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:shadow-lg" data-category="nails">
+      <div class="portfolio-item group bg-surface-card rounded-[28px] overflow-hidden border border-border-delicate/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:shadow-lg" data-category="nails">
         <div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-subtle">
           <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=800&q=80" alt="Деликатный маникюр с нюдовым покрытием" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
-          <div class="absolute top-4 left-4 bg-surface-card/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-border-delicate text-[11px] font-medium text-primary tracking-wide">
+          <div class="absolute top-4 left-4 bg-surface-card/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-border-delicate text-xs font-medium text-primary tracking-wide">
             Ногтевой сервис
           </div>
         </div>
         <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between">
           <div>
-            <div class="flex items-center justify-between text-xs text-on-surface-variant/70 mb-2">
+            <div class="flex items-center justify-between text-xs text-on-surface-variant mb-2">
               <span>Алина • SMART-подолог</span>
               <span>~1,5 часа</span>
             </div>
             <h3 class="font-headline-sm text-lg text-on-surface mb-2 font-normal">Нюдовый минеральный глянец &amp; микро-акценты</h3>
-            <p class="text-xs text-on-surface-variant font-light leading-relaxed">
+            <p class="text-xs text-on-surface-variant font-normal leading-relaxed">
               Тончайшее укрепление натуральных ногтей, японский ритуал ухода за кутикулой и еле заметные золотые частицы на полупрозрачной базе.
             </p>
           </div>
           <div class="pt-5 mt-5 border-t border-border-delicate/60 flex items-center justify-between">
-            <span class="text-xs text-on-surface-variant/80">Результат визита</span>
-            <a class="text-xs uppercase tracking-wider text-primary font-medium hover:underline inline-flex items-center gap-1" href="#booking">
+            <span class="text-xs text-on-surface-variant">Результат визита</span>
+            <a class="text-xs uppercase tracking-wider text-primary font-medium hover:underline inline-flex items-center gap-1 min-h-[44px]" href="#booking">
               <span>Повторить</span>
               <span aria-hidden="true" class="material-symbols-outlined text-[14px]">arrow_forward</span>
             </a>
@@ -681,27 +711,27 @@
       </div>
 
       <!-- Работа 3: спа и массаж -->
-      <div class="portfolio-item group bg-surface-card rounded-[32px] overflow-hidden border border-border-delicate/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:shadow-lg" data-category="spa">
+      <div class="portfolio-item group bg-surface-card rounded-[28px] overflow-hidden border border-border-delicate/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:shadow-lg" data-category="spa">
         <div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-subtle">
           <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Спа-ритуал и массаж лица" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
-          <div class="absolute top-4 left-4 bg-surface-card/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-border-delicate text-[11px] font-medium text-primary tracking-wide">
+          <div class="absolute top-4 left-4 bg-surface-card/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-border-delicate text-xs font-medium text-primary tracking-wide">
             Спа &amp; массаж лица
           </div>
         </div>
         <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between">
           <div>
-            <div class="flex items-center justify-between text-xs text-on-surface-variant/70 mb-2">
+            <div class="flex items-center justify-between text-xs text-on-surface-variant mb-2">
               <span>Екатерина • Спа-терапевт</span>
               <span>50 мин</span>
             </div>
             <h3 class="font-headline-sm text-lg text-on-surface mb-2 font-normal">Скульптурный лифтинг и расслабляющий ритуал</h3>
-            <p class="text-xs text-on-surface-variant font-light leading-relaxed">
+            <p class="text-xs text-on-surface-variant font-normal leading-relaxed">
               Ручная моделирующая пластика овала лица, снятие гипертонуса мышц шеи, эфирные масла вербены и увлажняющая коллагеновая маска.
             </p>
           </div>
           <div class="pt-5 mt-5 border-t border-border-delicate/60 flex items-center justify-between">
-            <span class="text-xs text-on-surface-variant/80">Результат визита</span>
-            <a class="text-xs uppercase tracking-wider text-primary font-medium hover:underline inline-flex items-center gap-1" href="#booking">
+            <span class="text-xs text-on-surface-variant">Результат визита</span>
+            <a class="text-xs uppercase tracking-wider text-primary font-medium hover:underline inline-flex items-center gap-1 min-h-[44px]" href="#booking">
               <span>Повторить</span>
               <span aria-hidden="true" class="material-symbols-outlined text-[14px]">arrow_forward</span>
             </a>
@@ -716,11 +746,11 @@
 <section id="masters" class="w-full py-24 bg-surface/50 border-t border-border-delicate/70">
   <div class="max-w-[1240px] mx-auto px-6 md:px-10">
     <div class="text-center max-w-xl mx-auto mb-16">
-      <span class="text-[11px] uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Команда</span>
-      <h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface font-normal tracking-tight">
+      <span class="text-xs uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Команда</span>
+      <h2 class="font-headline-lg text-[30px] sm:text-[40px] leading-[1.15] text-on-surface font-normal">
         Мастера пространства
       </h2>
-      <p class="text-sm text-on-surface-variant font-light mt-3">
+      <p class="text-sm text-on-surface-variant font-normal mt-3">
         Камерный состав проверенных специалистов с чутким отношением к гостю.
       </p>
     </div>
@@ -728,32 +758,32 @@
 
       <!-- Мастер 1 -->
       <div class="flex flex-col items-center text-center">
-        <div class="w-full aspect-[4/5] rounded-[32px] overflow-hidden mb-6 bg-surface-subtle">
+        <div class="w-full aspect-[4/5] rounded-[28px] overflow-hidden mb-6 bg-surface-subtle">
           <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80" alt="Земфира — основательница и стилист-колорист" loading="lazy" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500 ease-out">
         </div>
         <h3 class="font-headline-sm text-xl text-on-surface">Земфира</h3>
         <p class="text-xs uppercase tracking-widest text-primary font-medium mt-1 mb-2">Основательница • Стилист-колорист</p>
-        <p class="text-xs text-on-surface-variant font-light max-w-xs">Сложный блонд, архитектурные стрижки и оздоровление волос. 12 лет практики.</p>
+        <p class="text-xs text-on-surface-variant font-normal max-w-xs">Сложный блонд, архитектурные стрижки и оздоровление волос. 12 лет практики.</p>
       </div>
 
       <!-- Мастер 2 -->
       <div class="flex flex-col items-center text-center">
-        <div class="w-full aspect-[4/5] rounded-[32px] overflow-hidden mb-6 bg-surface-subtle">
+        <div class="w-full aspect-[4/5] rounded-[28px] overflow-hidden mb-6 bg-surface-subtle">
           <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" alt="Алина — мастер ногтевого сервиса и SMART-подолог" loading="lazy" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500 ease-out">
         </div>
         <h3 class="font-headline-sm text-xl text-on-surface">Алина</h3>
         <p class="text-xs uppercase tracking-widest text-primary font-medium mt-1 mb-2">Ногтевой сервис • SMART-подолог</p>
-        <p class="text-xs text-on-surface-variant font-light max-w-xs">Японский деликатный маникюр и атравматичная обработка стоп. 7 лет практики.</p>
+        <p class="text-xs text-on-surface-variant font-normal max-w-xs">Японский деликатный маникюр и атравматичная обработка стоп. 7 лет практики.</p>
       </div>
 
       <!-- Мастер 3 -->
       <div class="flex flex-col items-center text-center">
-        <div class="w-full aspect-[4/5] rounded-[32px] overflow-hidden mb-6 bg-surface-subtle">
+        <div class="w-full aspect-[4/5] rounded-[28px] overflow-hidden mb-6 bg-surface-subtle">
           <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Екатерина — спа-терапевт и массажист" loading="lazy" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500 ease-out">
         </div>
         <h3 class="font-headline-sm text-xl text-on-surface">Екатерина</h3>
         <p class="text-xs uppercase tracking-widest text-primary font-medium mt-1 mb-2">Спа-терапевт • Массажист</p>
-        <p class="text-xs text-on-surface-variant font-light max-w-xs">Скульптурирующий лифтинг лица, аромаритуалы и расслабление. 9 лет практики.</p>
+        <p class="text-xs text-on-surface-variant font-normal max-w-xs">Скульптурирующий лифтинг лица, аромаритуалы и расслабление. 9 лет практики.</p>
       </div>
 
     </div>
@@ -761,13 +791,13 @@
 </section>
 
 <!-- ============ 6. ОНЛАЙН-ЗАПИСЬ ============ -->
-<section id="booking" class="w-full py-20 bg-background">
+<section id="booking" class="w-full py-24 bg-background">
   <div class="max-w-[760px] mx-auto px-6 text-center">
-    <span class="text-[11px] uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Онлайн-запись</span>
-    <h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface font-normal tracking-tight mb-4">
+    <span class="text-xs uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Онлайн-запись</span>
+    <h2 class="font-headline-lg text-[30px] sm:text-[40px] leading-[1.15] text-on-surface font-normal mb-4">
       Забронируйте удобное время
     </h2>
-    <p class="text-sm text-on-surface-variant font-light mb-8 max-w-md mx-auto">
+    <p class="text-sm text-on-surface-variant font-normal mb-8 max-w-md mx-auto">
       Оставьте телефон — администратор свяжется с вами в течение 5 минут для выбора мастера и подтверждения визита.
     </p>
     <form id="bookingForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
@@ -777,14 +807,16 @@
         Отправить
       </button>
     </form>
-    <div id="bookingSuccess" role="status" class="is-hidden mt-4 text-xs text-primary font-medium tracking-wide">
-      ✓ Спасибо! Заявка принята — мы свяжемся с вами в ближайшее время.
+    <div id="bookingSuccess" role="status" aria-live="polite" class="is-hidden mt-5 max-w-md mx-auto flex items-start gap-3 rounded-2xl border border-success/25 bg-success/5 px-5 py-4 text-left">
+      <span class="material-symbols-outlined text-success text-[20px] leading-none mt-px" aria-hidden="true">check_circle</span>
+      <span class="text-sm text-success font-medium">Спасибо! Заявка принята — мы свяжемся с вами в ближайшее время.</span>
     </div>
-    <div id="bookingError" role="status" class="is-hidden mt-4 text-xs text-primary font-medium tracking-wide">
-      Пожалуйста, укажите номер телефона в формате +375 (29) 000-00-00.
+    <div id="bookingError" role="alert" aria-live="assertive" class="is-hidden mt-5 max-w-md mx-auto flex items-start gap-3 rounded-2xl border border-error/25 bg-error/5 px-5 py-4 text-left">
+      <span class="material-symbols-outlined text-error text-[20px] leading-none mt-px" aria-hidden="true">error</span>
+      <span class="text-sm text-error font-medium">Пожалуйста, укажите номер телефона в формате +375 (29) 000-00-00.</span>
     </div>
     <div class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs uppercase tracking-[0.16em] text-on-surface-variant">
-      <span class="text-on-surface-variant/60">Или напишите нам:</span>
+      <span class="text-on-surface-variant">Или напишите нам:</span>
       <a class="hover:text-primary transition-colors" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
       <a class="hover:text-primary transition-colors" href="https://wa.me/375297458822" target="_blank" rel="noopener">WhatsApp</a>
       <a class="hover:text-primary transition-colors" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
@@ -793,38 +825,38 @@
 </section>
 
 <!-- ============ 7. ЛОКАЦИЯ И КОНТАКТЫ ============ -->
-<section id="location" class="w-full py-24 bg-surface/40 border-t border-border-delicate/70">
+<section id="location" class="w-full py-24 bg-surface/50 border-t border-border-delicate/70">
   <div class="max-w-[1240px] mx-auto px-6 md:px-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       <div class="lg:col-span-5 flex flex-col justify-between">
         <div>
-          <span class="text-[11px] uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Локация</span>
-          <h2 class="font-headline-lg text-3xl sm:text-4xl text-on-surface font-normal tracking-tight mb-8">
+          <span class="text-xs uppercase tracking-[0.26em] text-primary mb-3 block font-medium">Локация</span>
+          <h2 class="font-headline-lg text-[30px] sm:text-[40px] leading-[1.15] text-on-surface font-normal mb-8">
             В самом сердце Могилева
           </h2>
           <div class="space-y-6 text-sm">
             <div>
-              <p class="text-xs uppercase tracking-widest text-on-surface-variant/70 mb-1">Адрес</p>
-              <p class="text-on-surface font-normal">г. Могилев, пешеходная ул. Ленинская, 45</p>
-              <p class="text-xs text-on-surface-variant font-light mt-0.5">Вход с пешеходной зоны, напротив Театрального сквера</p>
+              <p class="text-xs uppercase tracking-widest text-on-surface-variant mb-1">Адрес</p>
+              <p class="text-on-surface font-normal">г. Могилев, ул. Королёва, 25</p>
+              <p class="text-xs text-on-surface-variant font-normal mt-0.5">Отметка на карте — справа</p>
             </div>
             <div>
-              <p class="text-xs uppercase tracking-widest text-on-surface-variant/70 mb-1">Время работы</p>
+              <p class="text-xs uppercase tracking-widest text-on-surface-variant mb-1">Время работы</p>
               <p class="text-on-surface font-normal">Пн — Сб: 09:00 – 21:00</p>
-              <p class="text-xs text-on-surface-variant font-light mt-0.5">Вс: 10:00 – 19:00 (по предварительной записи)</p>
+              <p class="text-xs text-on-surface-variant font-normal mt-0.5">Вс: 10:00 – 19:00 (по предварительной записи)</p>
             </div>
             <div>
-              <p class="text-xs uppercase tracking-widest text-on-surface-variant/70 mb-1">Телефон</p>
+              <p class="text-xs uppercase tracking-widest text-on-surface-variant mb-1">Телефон</p>
               <a class="text-base text-on-surface hover:text-primary transition-colors" href="tel:+375297458822">+375 (29) 745-88-22</a>
-              <p class="text-xs text-on-surface-variant font-light mt-0.5">Звонки, Viber и Telegram</p>
+              <p class="text-xs text-on-surface-variant font-normal mt-0.5">Звонки, Viber и Telegram</p>
             </div>
             <div>
-              <p class="text-xs uppercase tracking-widest text-on-surface-variant/70 mb-2">Мессенджеры</p>
+              <p class="text-xs uppercase tracking-widest text-on-surface-variant mb-2">Мессенджеры</p>
               <div class="flex items-center gap-4 text-xs tracking-wider uppercase text-on-surface-variant">
                 <a class="hover:text-primary transition-colors" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
-                <span class="text-primary/40">•</span>
+                <span class="text-primary/60">•</span>
                 <a class="hover:text-primary transition-colors" href="https://wa.me/375297458822" target="_blank" rel="noopener">WhatsApp</a>
-                <span class="text-primary/40">•</span>
+                <span class="text-primary/60">•</span>
                 <a class="hover:text-primary transition-colors" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
               </div>
             </div>
@@ -832,23 +864,28 @@
         </div>
       </div>
 
-      <!-- Карта-заглушка в стиле дизайна -->
+      <!-- Карта OpenStreetMap с отметкой реального адреса -->
       <div class="lg:col-span-7">
-        <div class="relative w-full aspect-[16/10] rounded-[32px] overflow-hidden bg-surface-subtle shadow-sm border border-border-delicate flex items-center justify-center">
+        <div class="relative w-full aspect-[16/10] rounded-[28px] overflow-hidden bg-surface-subtle shadow-sm border border-border-delicate">
           <div class="absolute inset-0 opacity-[0.55]" style="background-image: linear-gradient(#E6DFD5 1px, transparent 1px), linear-gradient(90deg, #E6DFD5 1px, transparent 1px); background-size: 56px 56px;"></div>
-          <div class="relative bg-surface-card/95 backdrop-blur-md px-5 py-2.5 rounded-full border border-border-delicate shadow-sm flex items-center gap-2">
+          <iframe
+            class="absolute inset-0 w-full h-full border-0"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=30.3542,53.9009,30.3749,53.9085&layer=mapnik&marker=53.9047421,30.3645816"
+            title="Карта: салон «Земфира», г. Могилев, ул. Королёва, 25"
+            loading="lazy"></iframe>
+          <div class="absolute top-4 right-4 z-10 bg-surface-card/95 backdrop-blur-md px-5 py-2.5 rounded-full border border-border-delicate shadow-sm flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-primary"></span>
-            <span class="text-xs uppercase tracking-widest text-on-surface font-medium">Земфира • Ленинская 45</span>
+            <span class="text-xs uppercase tracking-widest text-on-surface font-medium">Земфира • Королёва 25</span>
           </div>
-          <div class="absolute bottom-4 right-4">
-            <a class="px-4 py-2 rounded-full bg-surface-card/90 backdrop-blur-md text-xs tracking-wider text-on-surface hover:text-primary transition-colors border border-border-delicate shadow-sm inline-flex items-center gap-1.5" href="https://yandex.by/maps/?text=Могилев+ул+Ленинская+45" target="_blank" rel="noopener">
-              <span>Яндекс Карты</span>
-              <span aria-hidden="true" class="material-symbols-outlined text-[14px]">north_east</span>
+          <div class="absolute bottom-4 right-4 z-10">
+            <a class="px-4 py-2 rounded-full bg-surface-card/90 backdrop-blur-md text-xs tracking-wider text-on-surface hover:text-primary transition-colors border border-border-delicate shadow-sm inline-flex items-center gap-1.5" href="https://www.google.com/maps/dir/?api=1&destination=53.9047421,30.3645816" target="_blank" rel="noopener">
+              <span>Построить маршрут</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-[14px]">route</span>
             </a>
           </div>
         </div>
-        <p class="text-xs text-on-surface-variant/70 font-light mt-4 text-center lg:text-left">
-          Ориентир: пешеходная улица Ленинская, рядом с Театральным сквером и площадью Звёзд.
+        <p class="text-xs text-on-surface-variant font-normal mt-4 text-center lg:text-left">
+          Кнопка «Построить маршрут» откроет карту с путём до салона от вашего местоположения.
         </p>
       </div>
     </div>
@@ -858,7 +895,7 @@
 
 <!-- ============ ФУТЕР ============ -->
 <footer class="w-full bg-background border-t border-border-delicate py-12">
-  <div class="max-w-[1240px] mx-auto px-6 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-on-surface-variant/70 font-light tracking-wide">
+  <div class="max-w-[1240px] mx-auto px-6 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-on-surface-variant font-normal tracking-wide">
     <div class="flex items-center gap-3">
       <span class="font-headline-sm uppercase text-on-surface tracking-widest">Земфира</span>
       <span>© 2026 Все права защищены</span>
@@ -871,7 +908,7 @@
       <a class="hover:text-primary transition-colors" href="#location">Контакты</a>
     </div>
     <div>
-      <span>г. Могилев, ул. Ленинская, 45</span>
+      <span>г. Могилев, ул. Королёва, 25</span>
     </div>
   </div>
 </footer>
